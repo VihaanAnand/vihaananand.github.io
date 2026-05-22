@@ -1,0 +1,274 @@
+/* ── Fonts ────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'SF Pro';
+  src: url('SF-Pro.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro';
+  src: url('SF-Pro-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* ── macOS type scale — titles ×4, everything else ×1 ────── */
+:root {
+  /* Large Title ×3   */ --t-lt: 78px; --lh-lt: 96px;
+  /* Title 2     ×3   */ --t-t2: 51px; --lh-t2: 66px;
+  /* Title 3     ×2   */ --t-t3: 30px; --lh-t3: 40px;
+  /* Callout     ×4/3 */ --t-co: 16px; --lh-co: 20px;
+  /* Subheadline ×4/3 */ --t-sh: 15px; --lh-sh: 19px;
+  /* Headline    ×4/3 */ --t-hl: 17px; --lh-hl: 21px;
+  /* Body        ×4/3 */ --t-bd: 17px; --lh-bd: 21px;
+  /* Footnote    ×4/3 */ --t-fn: 13px; --lh-fn: 17px;
+}
+
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1c1c1e;
+  --accent:    #0091ff;
+  --accent-lt: #ddf0ff;
+  --surface:   #f2f2f7;
+  --white:     #ffffff;
+  --border:    #e2e8f0;
+  --radius:    12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'SF Pro', system-ui, sans-serif;
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+em { font-style: italic; }
+
+/* ── Utility ──────────────────────────────────────────────── */
+.container        { max-width: 50%; margin-inline: auto; padding-inline: 1rem; }
+.container-narrow { max-width: 50%; margin-inline: auto; padding-inline: 1rem; }
+
+/* ── Buttons — Callout ────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .75rem 1.5rem;
+  border-radius: 8px;
+  font-size: var(--t-co);
+  line-height: var(--lh-co);
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: #007de0; }
+.btn-outline { border-color: var(--ink); color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--white); }
+.btn-ghost { color: var(--ink); background: transparent; }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ── Wordmark — Large Title ───────────────────────────────── */
+.wordmark {
+  padding: 1rem 1rem 0;
+  max-width: 50%;
+  margin-inline: auto;
+  text-align: center;
+}
+.wordmark span {
+  font-size: var(--t-lt);
+  line-height: var(--lh-lt);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  padding: 1rem 1rem 2rem;
+  max-width: 50%;
+  margin-inline: auto;
+  text-align: center;
+}
+/* Hero headline — Title 3 semibold */
+.hero-headline {
+  font-size: var(--t-t2);
+  line-height: var(--lh-t2);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+/* Hero sub — Body */
+.hero-sub {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Sections ─────────────────────────────────────────────── */
+.section { padding: 16px 0; }
+.section .container,
+.section .container-narrow {
+  background: rgba(0, 145, 255, 0.125);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* Section label — Headline */
+.section-label {
+  font-size: var(--t-hl);
+  line-height: var(--lh-hl);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+/* Section title — Title 3 bold */
+.section-title {
+  font-size: var(--t-t3);
+  line-height: var(--lh-t3);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ── Subjects grid ────────────────────────────────────────── */
+.subjects-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.subject-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+/* Card heading — Headline */
+.subject-card h3 {
+  font-size: var(--t-hl);
+  line-height: var(--lh-hl);
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+/* Card body — Body */
+.subject-card p {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  font-weight: 400;
+}
+
+/* ── Class ────────────────────────────────────────────────── */
+.class-desc {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  margin-bottom: 1rem;
+}
+.class-bullets {
+  list-style: disc;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+}
+
+/* ── Testimonials ─────────────────────────────────────────── */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.testimonial {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+/* Quote — Body */
+.testimonial p {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  margin-bottom: 1rem;
+}
+/* Cite — Footnote */
+.testimonial cite {
+  font-size: var(--t-fn);
+  line-height: var(--lh-fn);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ── About ────────────────────────────────────────────────── */
+/* Bio — Body */
+.about-bio {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+}
+
+/* ── Contact ──────────────────────────────────────────────── */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.contact-card:hover { border-color: var(--accent); }
+/* Card heading — Headline */
+.contact-card h3 {
+  font-size: var(--t-hl);
+  line-height: var(--lh-hl);
+  font-weight: 700;
+}
+/* Card subtext — Body */
+.contact-card p {
+  font-size: var(--t-bd);
+  line-height: var(--lh-bd);
+  color: var(--accent);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+/* 4→2 column grids */
+@media (max-width: 1536px) {
+  .subjects-grid-4,
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 50%→full width */
+@media (max-width: 1024px) {
+  .container, .container-narrow, .hero, .wordmark { max-width: 100%; }
+  .section { padding: 8px 16px 16px; }
+}
+
+/* all grids→1 column */
+@media (max-width: 512px) {
+  .subjects-grid-4,
+  .testimonials,
+  .contact-cards { grid-template-columns: 1fr; }
+}
