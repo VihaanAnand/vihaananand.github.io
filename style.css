@@ -15,7 +15,7 @@
 /* ── macOS type scale — titles ×4, everything else ×1 ────── */
 :root {
   /* Large Title ×3   */ --t-lt: 78px; --lh-lt: 96px;
-  /* Title 2     ×3   */ --t-t2: 51px; --lh-t2: 66px;
+  /* Title 2     ×3   */ --t-t2: 45px; --lh-t2: 60px;
   /* Title 3     ×2   */ --t-t3: 30px; --lh-t3: 40px;
   /* Callout     ×4/3 */ --t-co: 16px; --lh-co: 20px;
   /* Subheadline ×4/3 */ --t-sh: 15px; --lh-sh: 19px;
