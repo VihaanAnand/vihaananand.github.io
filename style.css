@@ -86,6 +86,7 @@ em { font-style: italic; }
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  text-align: center;
 }
 .wordmark span {
   font-size: var(--t-lt);
@@ -240,6 +241,8 @@ em { font-style: italic; }
   display: flex;
   flex-direction: column;
   gap: .25rem;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .contact-card:hover { border-color: var(--accent); }
 /* Card heading — Headline */
@@ -258,7 +261,7 @@ em { font-style: italic; }
 /* ── Responsive ───────────────────────────────────────────── */
 
 /* 4→2 column grids */
-@media (max-width: 1536px) {
+@media (max-width: 2048px) {
   .subjects-grid-4,
   .testimonials { grid-template-columns: repeat(2, 1fr); }
 }
@@ -267,6 +270,7 @@ em { font-style: italic; }
 @media (max-width: 1024px) {
   .container, .container-narrow, .hero, .wordmark { max-width: 100%; }
   .section { padding: 8px 16px 16px; }
+  .wordmark img { display: none; }
 }
 
 /* all grids→1 column */
