@@ -82,7 +82,10 @@ em { font-style: italic; }
   padding: 1rem 1rem 0;
   max-width: 50%;
   margin-inline: auto;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 .wordmark span {
   font-size: var(--t-lt);
